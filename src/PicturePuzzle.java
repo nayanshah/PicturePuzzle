@@ -236,9 +236,8 @@ public class PicturePuzzle extends JFrame {
 		// Set up the lists of buttons, correct orders and current order
 		buttons = new ArrayList<Object>(Arrays.asList(getJPanel().getComponents()));
 		correct = new ArrayList<String>(16);
-		//icons = new ImageIcon()[16];
 		for (int i = 1; i <= 16; i++) {
-		    
+		    // Add the icons in correct order
 		    icons[(i-1)] = new ImageIcon("/home/nayan/prog/Puzzle/assets/island/"+i+".jpg");
 			correct.add(String.valueOf(i));
 		}
