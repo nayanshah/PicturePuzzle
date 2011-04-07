@@ -261,6 +261,7 @@ public class PicturePuzzle extends JFrame {
 			String value = (String) current.get(i);
 			b.setText(value);
 			b.setBackground(java.awt.Color.orange);
+			b.setIcon(new ImageIcon("/home/nayan/prog/Puzzle/assets/island/"+i+".jpg"));
 			if (value.equals("16")) {
 				b.setVisible(false);
 				hiddenIndex = i;
@@ -385,7 +386,7 @@ public class PicturePuzzle extends JFrame {
 			jButton1 = new javax.swing.JButton();
 			jButton1.setText("1");
 			jButton1.setBackground(java.awt.Color.orange);
-			jButton1.setIcon(new ImageIcon("C:/Data/Prog/Puzzle/assets/2.gif"));
+			jButton1.setIcon(new ImageIcon("/home/nayan/prog/Puzzle/assets/island/1.jpg"));
 			jButton1.addMouseListener(buttonEvents);
 			jButton1.addMouseMotionListener(buttonEvents);
 		}
