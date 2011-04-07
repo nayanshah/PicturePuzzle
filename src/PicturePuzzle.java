@@ -201,7 +201,6 @@ public class PicturePuzzle extends JFrame {
 	private int moves = 0;
 	private boolean solved;
 
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		new PicturePuzzle().setVisible(true);
 	}
@@ -383,6 +382,19 @@ public class PicturePuzzle extends JFrame {
 		return jContentPane;
 	}
 
+    /**
+     * Creates a JButton.
+     * @param Default text for the button
+     * @return The JButton Object
+     */
+    private javax.swing.JButton createButton(String text) {
+        JButton b = new javax.swing.JButton();
+		b.setText(text);
+		b.setBackground(java.awt.Color.orange);
+		b.addMouseListener(buttonEvents);
+		b.addMouseMotionListener(buttonEvents);
+		return b;
+    }
 	/**
 	 * This method initializes jButton1
 	 * 
@@ -390,12 +402,7 @@ public class PicturePuzzle extends JFrame {
 	 */
 	private javax.swing.JButton getJButton1() {
 		if (jButton1 == null) {
-			jButton1 = new javax.swing.JButton();
-			jButton1.setText("1");
-			jButton1.setBackground(java.awt.Color.orange);
-			jButton1.setIcon(new ImageIcon("/home/nayan/prog/Puzzle/assets/island/1.jpg"));
-			jButton1.addMouseListener(buttonEvents);
-			jButton1.addMouseMotionListener(buttonEvents);
+		    jButton1 = createButton("1");
 		}
 		return jButton1;
 	}
