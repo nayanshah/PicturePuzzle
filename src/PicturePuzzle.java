@@ -396,7 +396,7 @@ public class PicturePuzzle extends JFrame {
 		return b;
     }
 	/**
-	 * This method initializes jButton1
+	 * These methods initializes jButtons
 	 * 
 	 * @return javax.swing.JButton
 	 */
@@ -406,244 +406,94 @@ public class PicturePuzzle extends JFrame {
 		}
 		return jButton1;
 	}
-
-	/**
-	 * This method initializes jButton2
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton2() {
 		if (jButton2 == null) {
-			jButton2 = new javax.swing.JButton();
-			jButton2.setText("2");
-			jButton2.setBackground(java.awt.Color.orange);
-			jButton2.addMouseListener(buttonEvents);
-			jButton2.addMouseMotionListener(buttonEvents);
+		    jButton2 = createButton("2");
 		}
 		return jButton2;
 	}
-
-	/**
-	 * This method initializes jButton3
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton3() {
 		if (jButton3 == null) {
-			jButton3 = new javax.swing.JButton();
-			jButton3.setText("3");
-			jButton3.setBackground(java.awt.Color.orange);
-			jButton3.addMouseListener(buttonEvents);
-			jButton3.addMouseMotionListener(buttonEvents);
+		    jButton3 = createButton("3");
 		}
 		return jButton3;
 	}
-
-	/**
-	 * This method initializes jButton4
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton4() {
 		if (jButton4 == null) {
-			jButton4 = new javax.swing.JButton();
-			jButton4.setText("4");
-			jButton4.setBackground(java.awt.Color.orange);
-			jButton4.addMouseListener(buttonEvents);
-			jButton4.addMouseMotionListener(buttonEvents);
+		    jButton4 = createButton("4");
 		}
 		return jButton4;
 	}
-
-	/**
-	 * This method initializes jButton5
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton5() {
 		if (jButton5 == null) {
-			jButton5 = new javax.swing.JButton();
-			jButton5.setText("5");
-			jButton5.setBackground(java.awt.Color.orange);
-			jButton5.addMouseListener(buttonEvents);
-			jButton5.addMouseMotionListener(buttonEvents);
+		    jButton5 = createButton("5");
 		}
 		return jButton5;
 	}
-
-	/**
-	 * This method initializes jButton6
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton6() {
 		if (jButton6 == null) {
-			jButton6 = new javax.swing.JButton();
-			jButton6.setText("6");
-			jButton6.setBackground(java.awt.Color.orange);
-			jButton6.addMouseListener(buttonEvents);
-			jButton6.addMouseMotionListener(buttonEvents);
+		    jButton6 = createButton("6");
 		}
 		return jButton6;
 	}
-
-	/**
-	 * This method initializes jButton7
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton7() {
 		if (jButton7 == null) {
-			jButton7 = new javax.swing.JButton();
-			jButton7.setText("7");
-			jButton7.setBackground(java.awt.Color.orange);
-			jButton7.addMouseListener(buttonEvents);
-			jButton7.addMouseMotionListener(buttonEvents);
+		    jButton7 = createButton("7");
 		}
 		return jButton7;
 	}
-
-	/**
-	 * This method initializes jButton8
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton8() {
 		if (jButton8 == null) {
-			jButton8 = new javax.swing.JButton();
-			jButton8.setText("8");
-			jButton8.setBackground(java.awt.Color.orange);
-			jButton8.addMouseListener(buttonEvents);
-			jButton8.addMouseMotionListener(buttonEvents);
+		    jButton8 = createButton("8");
 		}
 		return jButton8;
 	}
-
-	/**
-	 * This method initializes jButton9
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton9() {
 		if (jButton9 == null) {
-			jButton9 = new javax.swing.JButton();
-			jButton9.setText("9");
-			jButton9.setBackground(java.awt.Color.orange);
-			jButton9.addMouseListener(buttonEvents);
-			jButton9.addMouseMotionListener(buttonEvents);
+		    jButton9 = createButton("9");
 		}
 		return jButton9;
 	}
-
-	/**
-	 * This method initializes jButton10
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton10() {
 		if (jButton10 == null) {
-			jButton10 = new javax.swing.JButton();
-			jButton10.setText("10");
-			jButton10.setBackground(java.awt.Color.orange);
-			jButton10.addMouseListener(buttonEvents);
-			jButton10.addMouseMotionListener(buttonEvents);
+		    jButton10 = createButton("10");
 		}
 		return jButton10;
 	}
-
-	/**
-	 * This method initializes jButton11
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton11() {
 		if (jButton11 == null) {
-			jButton11 = new javax.swing.JButton();
-			jButton11.setText("11");
-			jButton11.setBackground(java.awt.Color.orange);
-			jButton11.addMouseListener(buttonEvents);
-			jButton11.addMouseMotionListener(buttonEvents);
+		    jButton11 = createButton("11");
 		}
 		return jButton11;
 	}
-
-	/**
-	 * This method initializes jButton12
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton12() {
 		if (jButton12 == null) {
-			jButton12 = new javax.swing.JButton();
-			jButton12.setText("12");
-			jButton12.setBackground(java.awt.Color.orange);
-			jButton12.addMouseListener(buttonEvents);
-			jButton12.addMouseMotionListener(buttonEvents);
+		    jButton12 = createButton("12");
 		}
 		return jButton12;
 	}
-
-	/**
-	 * This method initializes jButton13
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton13() {
 		if (jButton13 == null) {
-			jButton13 = new javax.swing.JButton();
-			jButton13.setText("13");
-			jButton13.setBackground(java.awt.Color.orange);
-			jButton13.addMouseListener(buttonEvents);
-			jButton13.addMouseMotionListener(buttonEvents);
+		    jButton13 = createButton("13");
 		}
 		return jButton13;
 	}
-
-	/**
-	 * This method initializes jButton14
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton14() {
 		if (jButton14 == null) {
-			jButton14 = new javax.swing.JButton();
-			jButton14.setText("14");
-			jButton14.setBackground(java.awt.Color.orange);
-			jButton14.addMouseListener(buttonEvents);
-			jButton14.addMouseMotionListener(buttonEvents);
+		    jButton14 = createButton("14");
 		}
 		return jButton14;
 	}
-
-	/**
-	 * This method initializes jButton15
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton15() {
 		if (jButton15 == null) {
-			jButton15 = new javax.swing.JButton();
-			jButton15.setText("15");
-			jButton15.setBackground(java.awt.Color.orange);
-			jButton15.addMouseListener(buttonEvents);
-			jButton15.addMouseMotionListener(buttonEvents);
+		    jButton15 = createButton("15");
 		}
 		return jButton15;
 	}
-
-	/**
-	 * This method initializes jButton16
-	 * 
-	 * @return javax.swing.JButton
-	 */
 	private javax.swing.JButton getJButton16() {
 		if (jButton16 == null) {
-			jButton16 = new javax.swing.JButton();
+		    jButton16 = createButton("16");
 			jButton16.setVisible(false);
-			jButton16.setText("16");
-			jButton16.setBackground(java.awt.Color.orange);
-			jButton16.addMouseListener(buttonEvents);
-			jButton16.addMouseMotionListener(buttonEvents);
 		}
 		return jButton16;
 	}
