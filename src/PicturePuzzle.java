@@ -181,6 +181,7 @@ public class PicturePuzzle extends JFrame {
 	private javax.swing.JButton jButton14 = null;
 	private javax.swing.JButton jButton15 = null;
 	private javax.swing.JButton jButton16 = null;
+	private ImageIcon icons[] = new ImageIcon[16];
 	private javax.swing.JMenuBar jJMenuBar = null;
 	private javax.swing.JMenu gameMenu = null;
 	private javax.swing.JMenuItem jMenuItem = null;
@@ -236,7 +237,10 @@ public class PicturePuzzle extends JFrame {
 		// Set up the lists of buttons, correct orders and current order
 		buttons = new ArrayList<Object>(Arrays.asList(getJPanel().getComponents()));
 		correct = new ArrayList<String>(16);
+		//icons = new ImageIcon()[16];
 		for (int i = 1; i <= 16; i++) {
+		    
+		    icons[(i-1)] = new ImageIcon("/home/nayan/prog/Puzzle/assets/island/"+i+".jpg");
 			correct.add(String.valueOf(i));
 		}
 		current = new ArrayList<String>(correct);
@@ -259,9 +263,10 @@ public class PicturePuzzle extends JFrame {
 		for (int i = 0; i < buttons.size(); i++) {
 			JButton b = (JButton) buttons.get(i);
 			String value = (String) current.get(i);
+			int val = Integer.parseInt(value) - 1;
 			b.setText(value);
 			b.setBackground(java.awt.Color.orange);
-			b.setIcon(new ImageIcon("/home/nayan/prog/Puzzle/assets/island/"+i+".jpg"));
+			b.setIcon(icons[val]);
 			if (value.equals("16")) {
 				b.setVisible(false);
 				hiddenIndex = i;
@@ -326,9 +331,11 @@ public class PicturePuzzle extends JFrame {
 		// swap strings
 		JButton b = (JButton) buttons.get(index);
 		b.setText((String) current.get(index));
+		b.setIcon(icons[Integer.parseInt(current.get(index)) - 1]);
 		b.setVisible(false);
 		b = (JButton) buttons.get(hiddenIndex);
 		b.setText((String) current.get(hiddenIndex));
+		b.setIcon(icons[Integer.parseInt(current.get(hiddenIndex)) - 1]);
 		b.setVisible(true);
 
 		// update the position of the blanked spot
