@@ -230,7 +230,7 @@ public class PicturePuzzle extends JFrame {
 				.add(getHighlightBorder(), JLayeredPane.DRAG_LAYER);
 
 		this.setJMenuBar(getJJMenuBar());
-		this.setTitle("Slider Game");
+		this.setTitle("Picture Puzzle");
 		this.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 
 		// Set up the lists of buttons, correct orders and current order
