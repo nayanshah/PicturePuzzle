@@ -162,35 +162,20 @@ public class PicturePuzzle extends JFrame {
 
 	private ButtonEvents buttonEvents = new ButtonEvents();
 
-	private javax.swing.JPanel jContentPane = null;
-	private javax.swing.JPanel jPanel = null;
-	private javax.swing.JLabel statusLabel = null;
-	private javax.swing.JButton jButton1 = null;
-	private javax.swing.JButton jButton2 = null;
-	private javax.swing.JButton jButton3 = null;
-	private javax.swing.JButton jButton4 = null;
-	private javax.swing.JButton jButton5 = null;
-	private javax.swing.JButton jButton6 = null;
-	private javax.swing.JButton jButton7 = null;
-	private javax.swing.JButton jButton8 = null;
-	private javax.swing.JButton jButton9 = null;
-	private javax.swing.JButton jButton10 = null;
-	private javax.swing.JButton jButton11 = null;
-	private javax.swing.JButton jButton12 = null;
-	private javax.swing.JButton jButton13 = null;
-	private javax.swing.JButton jButton14 = null;
-	private javax.swing.JButton jButton15 = null;
-	private javax.swing.JButton jButton16 = null;
+	private JPanel jContentPane = null;
+	private JPanel jPanel = null;
+	private JLabel statusLabel = null;
+	private JButton jButtons[] = new JButton[16];
 	private ImageIcon icons[] = new ImageIcon[16];
-	private javax.swing.JMenuBar jJMenuBar = null;
-	private javax.swing.JMenu gameMenu = null;
-	private javax.swing.JMenuItem jMenuItem = null;
-	private javax.swing.JMenuItem jMenuItem1 = null;
-	private javax.swing.JMenu jMenu = null;
-	private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem = null;
-	private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1 = null;
-	private javax.swing.JButton dragButton = null;
-	private javax.swing.JPanel highlightBorder = null;
+	private JMenuBar jJMenuBar = null;
+	private JMenu gameMenu = null;
+	private JMenuItem jMenuItem = null;
+	private JMenuItem jMenuItem1 = null;
+	private JMenu jMenu = null;
+	private JRadioButtonMenuItem jRadioButtonMenuItem = null;
+	private JRadioButtonMenuItem jRadioButtonMenuItem1 = null;
+	private JButton dragButton = null;
+	private JPanel highlightBorder = null;
 
 	private ArrayList buttons;
 	private ArrayList<String> correct;
@@ -231,14 +216,14 @@ public class PicturePuzzle extends JFrame {
 
 		this.setJMenuBar(getJJMenuBar());
 		this.setTitle("Picture Puzzle");
-		this.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Set up the lists of buttons, correct orders and current order
 		buttons = new ArrayList<Object>(Arrays.asList(getJPanel().getComponents()));
 		correct = new ArrayList<String>(16);
 		for (int i = 1; i <= 16; i++) {
 		    // Add the icons in correct order
-		    icons[(i-1)] = new ImageIcon("/home/nayan/prog/Puzzle/assets/island/"+i+".jpg");
+		    icons[i-1] = new ImageIcon("/home/nayan/prog/Puzzle/assets/island/"+i+".jpg");
 			correct.add(String.valueOf(i));
 		}
 		current = new ArrayList<String>(correct);
@@ -369,11 +354,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes jContentPane
 	 * 
-	 * @return javax.swing.JPanel
+	 * @return JPanel
 	 */
-	private javax.swing.JPanel getJContentPane() {
+	private JPanel getJContentPane() {
 		if (jContentPane == null) {
-			jContentPane = new javax.swing.JPanel();
+			jContentPane = new JPanel();
 			jContentPane.setLayout(new java.awt.BorderLayout());
 			jContentPane.add(getJPanel(), java.awt.BorderLayout.CENTER);
 			jContentPane.add(getStatusLabel(), java.awt.BorderLayout.SOUTH);
@@ -386,125 +371,23 @@ public class PicturePuzzle extends JFrame {
      * @param Default text for the button
      * @return The JButton Object
      */
-    private javax.swing.JButton createButton(String text) {
-        JButton b = new javax.swing.JButton();
+    private JButton createButton(String text) {
+        JButton b = new JButton();
 		b.setText(text);
 		b.setBackground(java.awt.Color.orange);
 		b.addMouseListener(buttonEvents);
 		b.addMouseMotionListener(buttonEvents);
 		return b;
     }
-	/**
-	 * These methods initializes jButtons
-	 * 
-	 * @return javax.swing.JButton
-	 */
-	private javax.swing.JButton getJButton1() {
-		if (jButton1 == null) {
-		    jButton1 = createButton("1");
-		}
-		return jButton1;
-	}
-	private javax.swing.JButton getJButton2() {
-		if (jButton2 == null) {
-		    jButton2 = createButton("2");
-		}
-		return jButton2;
-	}
-	private javax.swing.JButton getJButton3() {
-		if (jButton3 == null) {
-		    jButton3 = createButton("3");
-		}
-		return jButton3;
-	}
-	private javax.swing.JButton getJButton4() {
-		if (jButton4 == null) {
-		    jButton4 = createButton("4");
-		}
-		return jButton4;
-	}
-	private javax.swing.JButton getJButton5() {
-		if (jButton5 == null) {
-		    jButton5 = createButton("5");
-		}
-		return jButton5;
-	}
-	private javax.swing.JButton getJButton6() {
-		if (jButton6 == null) {
-		    jButton6 = createButton("6");
-		}
-		return jButton6;
-	}
-	private javax.swing.JButton getJButton7() {
-		if (jButton7 == null) {
-		    jButton7 = createButton("7");
-		}
-		return jButton7;
-	}
-	private javax.swing.JButton getJButton8() {
-		if (jButton8 == null) {
-		    jButton8 = createButton("8");
-		}
-		return jButton8;
-	}
-	private javax.swing.JButton getJButton9() {
-		if (jButton9 == null) {
-		    jButton9 = createButton("9");
-		}
-		return jButton9;
-	}
-	private javax.swing.JButton getJButton10() {
-		if (jButton10 == null) {
-		    jButton10 = createButton("10");
-		}
-		return jButton10;
-	}
-	private javax.swing.JButton getJButton11() {
-		if (jButton11 == null) {
-		    jButton11 = createButton("11");
-		}
-		return jButton11;
-	}
-	private javax.swing.JButton getJButton12() {
-		if (jButton12 == null) {
-		    jButton12 = createButton("12");
-		}
-		return jButton12;
-	}
-	private javax.swing.JButton getJButton13() {
-		if (jButton13 == null) {
-		    jButton13 = createButton("13");
-		}
-		return jButton13;
-	}
-	private javax.swing.JButton getJButton14() {
-		if (jButton14 == null) {
-		    jButton14 = createButton("14");
-		}
-		return jButton14;
-	}
-	private javax.swing.JButton getJButton15() {
-		if (jButton15 == null) {
-		    jButton15 = createButton("15");
-		}
-		return jButton15;
-	}
-	private javax.swing.JButton getJButton16() {
-		if (jButton16 == null) {
-		    jButton16 = createButton("16");
-			jButton16.setVisible(false);
-		}
-		return jButton16;
-	}
 
 	/**
 	 * This method initializes jJMenuBar
 	 * 
-	 * @return javax.swing.JMenuBar
+	 * @return JMenuBar
 	 */
-	private javax.swing.JMenuBar getJJMenuBar() {
+	private JMenuBar getJJMenuBar() {
 		if (jJMenuBar == null) {
-			jJMenuBar = new javax.swing.JMenuBar();
+			jJMenuBar = new JMenuBar();
 			jJMenuBar.add(getGameMenu());
 			jJMenuBar.add(getJMenu());
 		}
@@ -514,11 +397,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes gameMenu
 	 * 
-	 * @return javax.swing.JMenu
+	 * @return JMenu
 	 */
-	private javax.swing.JMenu getGameMenu() {
+	private JMenu getGameMenu() {
 		if (gameMenu == null) {
-			gameMenu = new javax.swing.JMenu();
+			gameMenu = new JMenu();
 			gameMenu.add(getJMenuItem());
 			gameMenu.add(getJMenuItem1());
 			gameMenu.setText("Game");
@@ -530,11 +413,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes jMenuItem
 	 * 
-	 * @return javax.swing.JMenuItem
+	 * @return JMenuItem
 	 */
-	private javax.swing.JMenuItem getJMenuItem() {
+	private JMenuItem getJMenuItem() {
 		if (jMenuItem == null) {
-			jMenuItem = new javax.swing.JMenuItem();
+			jMenuItem = new JMenuItem();
 			jMenuItem.setText("Shuffle");
 			jMenuItem.setMnemonic(java.awt.event.KeyEvent.VK_S);
 			jMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
@@ -552,11 +435,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes jMenuItem1
 	 * 
-	 * @return javax.swing.JMenuItem
+	 * @return JMenuItem
 	 */
-	private javax.swing.JMenuItem getJMenuItem1() {
+	private JMenuItem getJMenuItem1() {
 		if (jMenuItem1 == null) {
-			jMenuItem1 = new javax.swing.JMenuItem();
+			jMenuItem1 = new JMenuItem();
 			jMenuItem1.setText("Quit");
 			jMenuItem1.setMnemonic(java.awt.event.KeyEvent.VK_Q);
 			jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
@@ -574,11 +457,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes jPanel
 	 * 
-	 * @return javax.swing.JPanel
+	 * @return JPanel
 	 */
-	private javax.swing.JPanel getJPanel() {
+	private JPanel getJPanel() {
 		if (jPanel == null) {
-			jPanel = new javax.swing.JPanel();
+			jPanel = new JPanel();
 			java.awt.GridLayout layGridLayout7 = new java.awt.GridLayout();
 			layGridLayout7.setRows(4);
 			layGridLayout7.setColumns(4);
@@ -596,22 +479,11 @@ public class PicturePuzzle extends JFrame {
 			//		jPanel.add(b);
 			//	}
 
-			jPanel.add(getJButton1(), null);
-			jPanel.add(getJButton2(), null);
-			jPanel.add(getJButton3(), null);
-			jPanel.add(getJButton4(), null);
-			jPanel.add(getJButton5(), null);
-			jPanel.add(getJButton6(), null);
-			jPanel.add(getJButton7(), null);
-			jPanel.add(getJButton8(), null);
-			jPanel.add(getJButton9(), null);
-			jPanel.add(getJButton10(), null);
-			jPanel.add(getJButton11(), null);
-			jPanel.add(getJButton12(), null);
-			jPanel.add(getJButton13(), null);
-			jPanel.add(getJButton14(), null);
-			jPanel.add(getJButton15(), null);
-			jPanel.add(getJButton16(), null);
+            for(int i = 0; i < jButtons.length; i++) {
+    		    jButtons[i] = createButton(String.valueOf(i+1));
+                jPanel.add(jButtons[i], null);
+            }
+
 			jPanel.setBackground(java.awt.Color.white);
 			jPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10,
 					10, 10, 10));
@@ -622,11 +494,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes statusLabel
 	 * 
-	 * @return javax.swing.JLabel
+	 * @return JLabel
 	 */
-	private javax.swing.JLabel getStatusLabel() {
+	private JLabel getStatusLabel() {
 		if (statusLabel == null) {
-			statusLabel = new javax.swing.JLabel();
+			statusLabel = new JLabel();
 			statusLabel.setText("Number of moves: 0");
 			statusLabel.setBorder(javax.swing.BorderFactory
 					.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -637,11 +509,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes jMenu
 	 * 
-	 * @return javax.swing.JMenu
+	 * @return JMenu
 	 */
-	private javax.swing.JMenu getJMenu() {
+	private JMenu getJMenu() {
 		if (jMenu == null) {
-			jMenu = new javax.swing.JMenu();
+			jMenu = new JMenu();
 			jMenu.add(getJRadioButtonMenuItem());
 			jMenu.add(getJRadioButtonMenuItem1());
 			jMenu.setText("Theme");
@@ -656,11 +528,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes jRadioButtonMenuItem
 	 * 
-	 * @return javax.swing.JRadioButtonMenuItem
+	 * @return JRadioButtonMenuItem
 	 */
-	private javax.swing.JRadioButtonMenuItem getJRadioButtonMenuItem() {
+	private JRadioButtonMenuItem getJRadioButtonMenuItem() {
 		if (jRadioButtonMenuItem == null) {
-			jRadioButtonMenuItem = new javax.swing.JRadioButtonMenuItem();
+			jRadioButtonMenuItem = new JRadioButtonMenuItem();
 			jRadioButtonMenuItem.setText("Default");
 			jRadioButtonMenuItem.setSelected(true);
 			jRadioButtonMenuItem.setAccelerator(javax.swing.KeyStroke
@@ -681,11 +553,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes jRadioButtonMenuItem1
 	 * 
-	 * @return javax.swing.JRadioButtonMenuItem
+	 * @return JRadioButtonMenuItem
 	 */
-	private javax.swing.JRadioButtonMenuItem getJRadioButtonMenuItem1() {
+	private JRadioButtonMenuItem getJRadioButtonMenuItem1() {
 		if (jRadioButtonMenuItem1 == null) {
-			jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+			jRadioButtonMenuItem1 = new JRadioButtonMenuItem();
 			jRadioButtonMenuItem1.setText("System");
 			jRadioButtonMenuItem1.setMnemonic(java.awt.event.KeyEvent.VK_Y);
 			jRadioButtonMenuItem1.setAccelerator(javax.swing.KeyStroke
@@ -704,11 +576,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes dragButton
 	 * 
-	 * @return javax.swing.JButton
+	 * @return JButton
 	 */
-	private javax.swing.JButton getDragButton() {
+	private JButton getDragButton() {
 		if (dragButton == null) {
-			dragButton = new javax.swing.JButton();
+			dragButton = new JButton();
 			dragButton.setVisible(false);
 			dragButton.setBackground(new java.awt.Color(51, 102, 255));
 		}
@@ -718,11 +590,11 @@ public class PicturePuzzle extends JFrame {
 	/**
 	 * This method initializes highlightBorder
 	 * 
-	 * @return javax.swing.JPanel
+	 * @return JPanel
 	 */
-	private javax.swing.JPanel getHighlightBorder() {
+	private JPanel getHighlightBorder() {
 		if (highlightBorder == null) {
-			highlightBorder = new javax.swing.JPanel();
+			highlightBorder = new JPanel();
 			highlightBorder.setOpaque(false);
 			highlightBorder.setBorder(javax.swing.BorderFactory
 					.createLineBorder(java.awt.Color.black, 2));
