@@ -2,9 +2,11 @@ package com.whiz;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.*;
+import java.net.URL;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
+
 
 public class PicturePuzzle extends JFrame {
 
@@ -383,6 +385,7 @@ public class PicturePuzzle extends JFrame {
 			jButton1 = new javax.swing.JButton();
 			jButton1.setText("1");
 			jButton1.setBackground(java.awt.Color.orange);
+			jButton1.setIcon(new ImageIcon("C:/Data/Prog/Puzzle/assets/2.gif"));
 			jButton1.addMouseListener(buttonEvents);
 			jButton1.addMouseMotionListener(buttonEvents);
 		}
