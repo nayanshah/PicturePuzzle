@@ -1,7 +1,23 @@
 PicturePuzzle
+==============
 
 A simple game in which the objective to recreate the original picture by swapping individual parts with the empty space.  
 
-Simply double click PicturePuzzle.jar to run.
+Build Instructions
+==================
 
-Copyright 2011, WHiZ.
+From within the project directory in both cases.
+
+Linux
+---------------
+$ ./build.sh 
+
+Windows
+--------------
+> build.bat
+
+Running
+========
+Just double click PicturePuzzle.jar or in the terminal enter:
+ java -jar PicturePuzzle.jar
+
