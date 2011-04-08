@@ -186,6 +186,9 @@ public class PicturePuzzle extends JFrame {
 	private int moves = 0;
 	private boolean solved;
 
+    private String path = "/home/nayan/prog/Puzzle/assets/";
+    private String theme = "ocean/";
+    
 	public static void main(String[] args) {
 		new PicturePuzzle().setVisible(true);
 	}
@@ -205,7 +208,7 @@ public class PicturePuzzle extends JFrame {
 	 * @return void
 	 */
 	private void initialize() {
-		this.setSize(300, 325);
+		this.setSize(400, 425);
 		this.setContentPane(getJContentPane());
 
 		// Add the drag button and feedback square to the drag layer of the
@@ -223,7 +226,7 @@ public class PicturePuzzle extends JFrame {
 		correct = new ArrayList<String>(16);
 		for (int i = 1; i <= 16; i++) {
 		    // Add the icons in correct order
-		    icons[i-1] = new ImageIcon("/home/nayan/prog/Puzzle/assets/island/"+i+".jpg");
+		    icons[i-1] = new ImageIcon(path + theme + i + ".jpg");
 			correct.add(String.valueOf(i));
 		}
 		current = new ArrayList<String>(correct);
@@ -235,7 +238,7 @@ public class PicturePuzzle extends JFrame {
 	 */
 	private void shuffle() {
 		// Randomize the order
-		Collections.shuffle(current);
+		//Collections.shuffle(current);
 
 		// Reset the stats
 		moves = 0;
@@ -331,6 +334,7 @@ public class PicturePuzzle extends JFrame {
 		// if you've won
 		if (current.equals(correct)) {
 			solved = true;
+			getStatusLabel().setText("Solved the game in " + moves + " moves.");
 			// Change the buttons colors to green
 			Iterator itr = buttons.iterator();
 			while (itr.hasNext()) {
