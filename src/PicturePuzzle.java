@@ -171,7 +171,10 @@ public class PicturePuzzle extends JFrame {
 	private JMenu gameMenu = null;
 	private JMenuItem jMenuItem = null;
 	private JMenuItem jMenuItem1 = null;
+	private JMenuItem jMenuItem2 = null;
+	private JMenuItem jMenuItem3 = null;
 	private JMenu jMenu = null;
+	private JFileChooser jFileChooser = null;
 	private JRadioButtonMenuItem jRadioButtonMenuItem = null;
 	private JRadioButtonMenuItem jRadioButtonMenuItem1 = null;
 	private JButton dragButton = null;
@@ -185,9 +188,9 @@ public class PicturePuzzle extends JFrame {
 
 	private int moves = 0;
 	private boolean solved;
+	private boolean solution;
 
-    private String path = "/home/nayan/prog/Puzzle/assets/";
-    private String theme = "ocean/";
+    private String path = "/home/nayan/prog/Puzzle/assets/ocean/";
     
 	public static void main(String[] args) {
 		new PicturePuzzle().setVisible(true);
@@ -208,7 +211,7 @@ public class PicturePuzzle extends JFrame {
 	 * @return void
 	 */
 	private void initialize() {
-		this.setSize(400, 425);
+		this.setSize(380, 400);
 		this.setContentPane(getJContentPane());
 
 		// Add the drag button and feedback square to the drag layer of the
@@ -226,10 +229,11 @@ public class PicturePuzzle extends JFrame {
 		correct = new ArrayList<String>(16);
 		for (int i = 1; i <= 16; i++) {
 		    // Add the icons in correct order
-		    icons[i-1] = new ImageIcon(path + theme + i + ".jpg");
+		    icons[i-1] = new ImageIcon(path + i + ".jpg");
 			correct.add(String.valueOf(i));
 		}
 		current = new ArrayList<String>(correct);
+		solution = false;
 		shuffle();
 	}
 
@@ -238,7 +242,10 @@ public class PicturePuzzle extends JFrame {
 	 */
 	private void shuffle() {
 		// Randomize the order
-		//Collections.shuffle(current);
+		if(solution)
+		    solution = false;
+		else
+    		Collections.shuffle(current);
 
 		// Reset the stats
 		moves = 0;
@@ -407,6 +414,8 @@ public class PicturePuzzle extends JFrame {
 		if (gameMenu == null) {
 			gameMenu = new JMenu();
 			gameMenu.add(getJMenuItem());
+			gameMenu.add(getJMenuItem3());
+			gameMenu.add(getJMenuItem2());
 			gameMenu.add(getJMenuItem1());
 			gameMenu.setText("Game");
 			gameMenu.setMnemonic(java.awt.event.KeyEvent.VK_G);
@@ -422,10 +431,10 @@ public class PicturePuzzle extends JFrame {
 	private JMenuItem getJMenuItem() {
 		if (jMenuItem == null) {
 			jMenuItem = new JMenuItem();
-			jMenuItem.setText("Shuffle");
-			jMenuItem.setMnemonic(java.awt.event.KeyEvent.VK_S);
+			jMenuItem.setText("New Game");
+			jMenuItem.setMnemonic(java.awt.event.KeyEvent.VK_N);
 			jMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
-					java.awt.event.KeyEvent.VK_S, java.awt.Event.ALT_MASK,
+					java.awt.event.KeyEvent.VK_N, java.awt.Event.CTRL_MASK,
 					false));
 			jMenuItem.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -445,9 +454,9 @@ public class PicturePuzzle extends JFrame {
 		if (jMenuItem1 == null) {
 			jMenuItem1 = new JMenuItem();
 			jMenuItem1.setText("Quit");
-			jMenuItem1.setMnemonic(java.awt.event.KeyEvent.VK_Q);
+			jMenuItem1.setMnemonic(java.awt.event.KeyEvent.VK_X);
 			jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
-					java.awt.event.KeyEvent.VK_Q, java.awt.Event.ALT_MASK,
+					java.awt.event.KeyEvent.VK_X, java.awt.Event.CTRL_MASK,
 					false));
 			jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -456,6 +465,68 @@ public class PicturePuzzle extends JFrame {
 			});
 		}
 		return jMenuItem1;
+	}
+
+	private JMenuItem getJMenuItem2() {
+		if (jMenuItem2 == null) {
+			jMenuItem2 = new JMenuItem();
+			jMenuItem2.setText("Image Path");
+			jMenuItem2.setMnemonic(java.awt.event.KeyEvent.VK_O);
+			jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+					java.awt.event.KeyEvent.VK_O, java.awt.Event.CTRL_MASK,
+					false));
+			jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					//System.exit(0);
+					jFileChooser = new JFileChooser();
+					jFileChooser.setDialogTitle("Select image directory.");
+					jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+					jFileChooser.setAcceptAllFileFilterUsed(false);
+					if (jFileChooser.showOpenDialog(jPanel) == JFileChooser.APPROVE_OPTION) {
+                        path = jFileChooser.getSelectedFile() + "/";
+				        solution = true;
+                		current = new ArrayList<String>(correct);
+		                for (int i = 1; i <= 16; i++) {
+		                    // Add the icons in correct order
+		                    icons[i-1] = new ImageIcon(path + i + ".jpg");
+		                }
+		                shuffle();
+			            getStatusLabel().setText("New game started.");
+			            // Change the buttons colors to green
+			            Iterator itr = buttons.iterator();
+			            while (itr.hasNext()) {
+				            ((JButton) itr.next()).setBackground(java.awt.Color.green);
+			            }
+			         }
+				}
+			});
+		}
+		return jMenuItem2;
+	}
+
+	private JMenuItem getJMenuItem3() {
+		if (jMenuItem3 == null) {
+			jMenuItem3 = new JMenuItem();
+			jMenuItem3.setText("Solution");
+			jMenuItem3.setMnemonic(java.awt.event.KeyEvent.VK_S);
+			jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+					java.awt.event.KeyEvent.VK_S, java.awt.Event.CTRL_MASK,
+					false));
+			jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+				    solution = true;
+            		current = new ArrayList<String>(correct);
+				    shuffle();
+		            getStatusLabel().setText("Correct solution.");
+		            // Change the buttons colors to green
+		            Iterator itr = buttons.iterator();
+		            while (itr.hasNext()) {
+			            ((JButton) itr.next()).setBackground(java.awt.Color.green);
+		            }
+				}
+			});
+		}
+		return jMenuItem3;
 	}
 
 	/**
