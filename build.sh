@@ -1,8 +1,14 @@
 #!/bin/bash
 
-javac -nowarn -d bin/ src/*.java 
-jar cfm PicturePuzzle.jar Manifest assets/ -C bin com/ 
+# Create temp directory for classes
+mkdir bin
+
+# Compile and create a jar
+javac -nowarn -d bin/ src/*.java
+jar cfm PicturePuzzle.jar Manifest assets/ -C bin com/
 chmod 755 PicturePuzzle.jar
 
-echo Successfully build the application.
+# Delete bin/ directory
+/bin/rm -rf bin
 
+echo Successfully built the application.
